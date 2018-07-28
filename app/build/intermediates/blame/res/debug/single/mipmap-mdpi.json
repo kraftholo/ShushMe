@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    }
+]
