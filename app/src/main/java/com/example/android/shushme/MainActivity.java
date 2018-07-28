@@ -16,15 +16,39 @@ package com.example.android.shushme;
 * limitations under the License.
 */
 
+import android.Manifest;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.android.shushme.provider.PlaceContract;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlacePicker;
+
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
 
     public static final String TAG = MainActivity.class.getSimpleName();
+
+    private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 100 ;
+    private static final int PLACE_PICKER_REQUEST =200;
 
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
@@ -41,6 +65,106 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new PlaceListAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
 
+        GoogleApiClient googleApiClient = new GoogleApiClient.Builder(this)
+                                            .addConnectionCallbacks(this)
+                                            .addOnConnectionFailedListener(this)
+                                            .addApi(LocationServices.API)
+                                            .addApi(Places.GEO_DATA_API)
+                                            .enableAutoManage(this,this)
+                                            .build();
+
+
+
     }
 
+    //my add button, check if location permission granted or not ... if yes, then launch PlacePicker
+    public void onAddPlaceButtonClicked(View view) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, getString(R.string.need_location_permission_message), Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Toast.makeText(this, getString(R.string.location_permissions_granted_message), Toast.LENGTH_LONG).show();
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+        Intent intent = null;
+        try {
+            intent = builder.build(this);
+        } catch (GooglePlayServicesRepairableException e) {
+            Log.e(TAG, "onAddPlaceButtonClicked: "+e );
+        } catch (GooglePlayServicesNotAvailableException e) {
+            Log.e(TAG, "onAddPlaceButtonClicked: "+e );
+        }
+        startActivityForResult(intent,PLACE_PICKER_REQUEST);
+
+    }
+
+    //called after PlacePickerRequest is complete
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==PLACE_PICKER_REQUEST && resultCode == RESULT_OK){
+
+            Place place = PlacePicker.getPlace(this,data);
+
+            if(place==null){
+                Log.i(TAG, "onActivityResult: No Place Selected");
+                return;
+            }
+
+            String placeName = place.getName().toString();
+            String placeAddress = place.getAddress().toString();
+            String placeID = place.getId();
+
+            ContentValues cv = new ContentValues();
+            cv.put(PlaceContract.PlaceEntry.COLUMN_PLACE_ID,placeID);
+            getContentResolver().insert(PlaceContract.PlaceEntry.CONTENT_URI,cv);
+
+        }
+
+    }
+
+
+
+    //my checkbox clicked, ask for location permissions
+    public void onLocationPermissionClicked(View view) {
+        ActivityCompat.requestPermissions(MainActivity.this,
+                new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                PERMISSIONS_REQUEST_FINE_LOCATION);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        CheckBox locationPermissions = (CheckBox) findViewById(R.id.enable_location_checkbox);
+
+        if(ActivityCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
+            locationPermissions.setChecked(false);
+        }else{
+            locationPermissions.setChecked(true);
+            locationPermissions.setEnabled(false);
+        }
+
+
+    }
+
+
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        Log.d(TAG, "onConnected: connection successful!");
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.d(TAG, "onConnectionSuspended: connection suspended");
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.d(TAG, "onConnectionFailed: connection failed :( ");
+    }
 }

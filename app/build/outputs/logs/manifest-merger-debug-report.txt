@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml
@@ -68,6 +68,15 @@ ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.
 		ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:32:13-37
 	android:name
 		ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:30:13-85
+uses-permission#android.permission.INTERNET
+ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:36:5-66
+MERGED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:36:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:37:5-78
+	android:name
+		ADDED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml:37:22-76
 uses-sdk
 INJECTED from /home/shobhit/Documents/Udacity/ShushMe/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.1.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/AndroidManifest.xml:21:5-23:78
@@ -98,10 +107,6 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:19:22-76
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:20:5-66
-	android:name
-		ADDED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:20:22-64
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:9.8.0] /home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/AndroidManifest.xml:21:5-77
 	android:glEsVersion
