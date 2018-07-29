@@ -19,6 +19,7 @@ package com.example.android.shushme;
 import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -33,6 +34,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.android.shushme.provider.PlaceContract;
@@ -61,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private GoogleApiClient mClient;
+    private Geofencing mGeofencing;
+    private boolean mSwitchIsEnabled;
 
 
     @Override
@@ -82,6 +87,30 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                                             .enableAutoManage(this,this)
                                             .build();
 
+        mGeofencing = new Geofencing(this,mClient);
+
+
+        //see whether the Geofencing switch is turned on or off
+        Switch onOffSwitch = (Switch) findViewById(R.id.enable_switch);
+
+        //value of switch on APP LAUNCH
+        mSwitchIsEnabled = getPreferences(MODE_PRIVATE).getBoolean(getString(R.string.setting_enabled),false);
+        onOffSwitch.setChecked(mSwitchIsEnabled);
+
+        //on flipping the switch, write it to the sharedPref
+        onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
+                editor.putBoolean(getString(R.string.setting_enabled),isChecked);
+                mSwitchIsEnabled = isChecked;
+                editor.commit();
+
+                if (mSwitchIsEnabled) mGeofencing.registerAllGeofences();
+                else mGeofencing.unRegisterAllGeofences();
+
+            }
+        });
 
 
     }
@@ -172,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         ArrayList<String> placeIDs = new ArrayList<>();
         while (cursor.moveToNext()){
             String placeID = cursor.getString(cursor.getColumnIndex(PlaceContract.PlaceEntry.COLUMN_PLACE_ID));
-            Log.e(TAG, "refreshPlacesData:PlaceID is "+placeID);
+            
             placeIDs.add(placeID);
         }
 
@@ -186,6 +215,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             @Override
             public void onResult(@NonNull PlaceBuffer places) {
                 mAdapter.swapPlaces(places);
+
+                //if geofencing is switched on .. a change in places should be reflected in the geofencingList
+                mGeofencing.updateGeofencesList(places);
+                if (mSwitchIsEnabled) mGeofencing.registerAllGeofences();
             }
         });
     }

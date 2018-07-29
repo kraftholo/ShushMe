@@ -29,6 +29,8 @@
             android:exported="false" />
 
         <activity android:name=".About"></activity>
+
+        <receiver android:name=".GeofenceBroadcastReceiver" />
     </application>
 
 </manifest>
