@@ -35,13 +35,56 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 43,
+                    "endOffset": 152
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 157,
+                    "endColumn": 57,
+                    "endOffset": 210
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 291,
+                        "startOffset": 153,
                         "endColumn": 57,
-                        "endOffset": 344
+                        "endOffset": 206
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 215,
+                    "endColumn": 53,
+                    "endOffset": 264
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 99,
+                        "endColumn": 53,
+                        "endOffset": 148
                     }
                 }
             }

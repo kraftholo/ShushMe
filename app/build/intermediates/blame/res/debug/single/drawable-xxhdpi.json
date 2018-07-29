@@ -16,6 +16,10 @@
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_volume_off_white_24dp.png"
     },
     {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-xxhdpi/powered_by_google_on_non_white.png",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/drawable-xxhdpi/powered_by_google_on_non_white.png"
+    },
+    {
         "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_volume_off_white_24dp.png",
         "source": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_volume_off_white_24dp.png"
     },
@@ -34,6 +38,10 @@
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_globe_primary_24dp.png",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_globe_primary_24dp.png"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-xxhdpi/powered_by_google_on_white.png",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/drawable-xxhdpi/powered_by_google_on_white.png"
     },
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_notifications_active_primary_24dp.png",

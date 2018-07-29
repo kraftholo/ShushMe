@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
-        "source": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_voice_search_api_material.xml"
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
     },
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
-        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_textfield_search_material.xml"
+        "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_voice_search_api_material.xml"
     },
     {
         "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",

@@ -8,4 +8,7 @@
     <string name="enable_location">Location Permissions</string>
     <string name="need_location_permission_message">You need to enable location permissions first</string>
     <string name="location_permissions_granted_message">Location Permissions Granted</string>
+    <string name="about_str">About</string>
+    <string name="terms_of_use">Terms Of Use</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>

@@ -232,6 +232,10 @@
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_action.xml"
     },
     {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/layout/activity_about.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/layout/activity_about.xml"
+    },
+    {
         "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
         "source": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_lines_media.xml"
     },

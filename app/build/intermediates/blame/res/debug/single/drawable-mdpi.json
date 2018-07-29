@@ -16,6 +16,10 @@
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/debug/drawable-mdpi/ic_place_accent_24dp.png"
     },
     {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-mdpi/powered_by_google_on_non_white.png",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/drawable-mdpi/powered_by_google_on_non_white.png"
+    },
+    {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_volume_off_white_24dp.png",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/debug/drawable-mdpi/ic_volume_off_white_24dp.png"
     },
@@ -30,6 +34,10 @@
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_globe_primary_24dp.png",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/debug/drawable-mdpi/ic_globe_primary_24dp.png"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-mdpi/powered_by_google_on_white.png",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/drawable-mdpi/powered_by_google_on_white.png"
     },
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_my_location_primary_24dp.png",
