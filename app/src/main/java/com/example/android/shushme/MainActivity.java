@@ -20,6 +20,7 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -37,10 +38,15 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.location.places.ui.PlacePicker;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     private PlaceListAdapter mAdapter;
     private RecyclerView mRecyclerView;
+    private GoogleApiClient mClient;
 
 
     @Override
@@ -62,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         mRecyclerView = (RecyclerView) findViewById(R.id.places_list_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new PlaceListAdapter(this);
+        mAdapter = new PlaceListAdapter(this,null);
         mRecyclerView.setAdapter(mAdapter);
 
-        GoogleApiClient googleApiClient = new GoogleApiClient.Builder(this)
+        mClient = new GoogleApiClient.Builder(this)
                                             .addConnectionCallbacks(this)
                                             .addOnConnectionFailedListener(this)
                                             .addApi(LocationServices.API)
@@ -117,9 +124,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             String placeAddress = place.getAddress().toString();
             String placeID = place.getId();
 
+
             ContentValues cv = new ContentValues();
             cv.put(PlaceContract.PlaceEntry.COLUMN_PLACE_ID,placeID);
             getContentResolver().insert(PlaceContract.PlaceEntry.CONTENT_URI,cv);
+
+            refreshPlacesData(); //also called after my GoogleApiClient connects
 
         }
 
@@ -151,10 +161,36 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     }
 
+    private void refreshPlacesData(){
+        Cursor cursor = getContentResolver().query(PlaceContract.PlaceEntry.CONTENT_URI
+                                                    ,null,null,null,null);
 
+        if(cursor==null||!cursor.moveToFirst())return;
+
+        ArrayList<String> placeIDs = new ArrayList<>();
+        while (cursor.moveToNext()){
+            String placeID = cursor.getString(cursor.getColumnIndex(PlaceContract.PlaceEntry.COLUMN_PLACE_ID));
+            Log.e(TAG, "refreshPlacesData:PlaceID is "+placeID);
+            placeIDs.add(placeID);
+        }
+
+        cursor.close();
+
+        PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi.getPlaceById(mClient,
+                                                                            placeIDs.toArray(new String[placeIDs.size()]));
+
+
+        placeResult.setResultCallback(new ResultCallback<PlaceBuffer>() {
+            @Override
+            public void onResult(@NonNull PlaceBuffer places) {
+                mAdapter.swapPlaces(places);
+            }
+        });
+    }
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+        refreshPlacesData();
         Log.d(TAG, "onConnected: connection successful!");
     }
 
