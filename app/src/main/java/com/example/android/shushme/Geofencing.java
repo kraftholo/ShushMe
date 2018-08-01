@@ -20,7 +20,7 @@ import java.util.List;
 public class Geofencing {
 
 
-    private static long GEOFENCE_EXPIRATION_DURATION = 100 * 60 * 60 * 24;        //1 day
+    private static long GEOFENCE_EXPIRATION_DURATION = 1000 * 60 * 60 * 24;        //1 day
     private static float GEOEFENCE_RADIUS = 100;                            //Radius in metres
     private List<Geofence> mGeofencesList;
     private Context mContext;

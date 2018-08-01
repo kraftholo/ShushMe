@@ -17,12 +17,15 @@ package com.example.android.shushme;
 */
 
 import android.Manifest;
+import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -181,13 +184,27 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         CheckBox locationPermissions = (CheckBox) findViewById(R.id.enable_location_checkbox);
 
+        //if no permission, set the checkbox to false
         if(ActivityCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             locationPermissions.setChecked(false);
         }else{
             locationPermissions.setChecked(true);
-            locationPermissions.setEnabled(false);
+            locationPermissions.setEnabled(false);  //so that user cannot uncheck the box after giving permissions
         }
+
+
+        CheckBox ringerPermissions = (CheckBox) findViewById(R.id.enable_ringer_checkbox);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+
+
+        if (notificationManager != null && Build.VERSION.SDK_INT >= 24
+                && !notificationManager.isNotificationPolicyAccessGranted()) {
+            ringerPermissions.setChecked(false);
+        }
+        ringerPermissions.setChecked(true);
+        ringerPermissions.setEnabled(false);
 
 
     }
@@ -201,7 +218,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         ArrayList<String> placeIDs = new ArrayList<>();
         while (cursor.moveToNext()){
             String placeID = cursor.getString(cursor.getColumnIndex(PlaceContract.PlaceEntry.COLUMN_PLACE_ID));
-            
+
             placeIDs.add(placeID);
         }
 
@@ -256,5 +273,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //Launches a built-in activity allowing user to turn the ringer notifications on Or Off
+    public void onRingerPermissionClicked(View view) {
+        Intent intent = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+            startActivity(intent);
+        }
+
     }
 }

@@ -11,4 +11,7 @@
     <string name="about_str">About</string>
     <string name="terms_of_use">Terms Of Use</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="enable_ringer">Ringer Permissions</string>
+    <string name="silent_mode_activated">Silent Mode Activated</string>
+    <string name="back_to_normal">Normal Mode</string>
 </resources>

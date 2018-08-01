@@ -168,6 +168,10 @@
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_bg_low.xml"
     },
     {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/tooltip_frame_light.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/res/drawable/tooltip_frame_light.xml"
+    },
+    {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/notification_icon_background.xml"
     },
@@ -230,6 +234,10 @@
     {
         "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
         "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/debug/drawable/tooltip_frame_dark.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/res/drawable/tooltip_frame_dark.xml"
     },
     {
         "merged": "/home/shobhit/Documents/Udacity/AdvancedAndroid_Shushme/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",

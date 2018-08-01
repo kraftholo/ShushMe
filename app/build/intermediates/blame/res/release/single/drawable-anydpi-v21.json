@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_globe_primary_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_globe_primary_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_place_accent_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_place_accent_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_volume_off_white_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_volume_off_white_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_volume_up_white_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_volume_up_white_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_gps_fixed_white_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_gps_fixed_white_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_notifications_active_primary_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_notifications_active_primary_24dp.xml"
+    },
+    {
+        "merged": "/home/shobhit/Documents/Udacity/ShushMe/app/build/intermediates/res/merged/release/drawable-anydpi-v21/ic_my_location_primary_24dp.xml",
+        "source": "/home/shobhit/Documents/Udacity/ShushMe/app/build/generated/res/pngs/release/drawable-anydpi-v21/ic_my_location_primary_24dp.xml"
+    }
+]

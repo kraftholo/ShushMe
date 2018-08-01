@@ -92,8 +92,46 @@
                     />
             </FrameLayout>
 
+
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingRight="8dp"
+                android:paddingTop="4dp"
+                android:src="@android:drawable/ic_menu_call" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/enable_ringer"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <CheckBox
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/enable_ringer_checkbox"
+                    android:onClick="onRingerPermissionClicked"
+                    />
+            </FrameLayout>
+
+
+
+        </LinearLayout>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -35,7 +35,14 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/dimens.xml"
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 291,
+                        "endColumn": 57,
+                        "endOffset": 344
+                    }
                 }
             },
             {
@@ -47,7 +54,14 @@
                     "endOffset": 152
                 },
                 "from": {
-                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml"
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 43,
+                        "endOffset": 94
+                    }
                 }
             },
             {
@@ -55,8 +69,46 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 157,
+                    "endColumn": 54,
+                    "endOffset": 207
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 344,
+                        "endColumn": 54,
+                        "endOffset": 394
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 212,
+                    "endColumn": 60,
+                    "endOffset": 268
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 211,
+                        "endColumn": 60,
+                        "endOffset": 267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 273,
                     "endColumn": 57,
-                    "endOffset": 210
+                    "endOffset": 326
                 },
                 "from": {
                     "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
@@ -71,11 +123,30 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 215,
+                    "startOffset": 331,
+                    "endColumn": 71,
+                    "endOffset": 398
+                },
+                "from": {
+                    "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 272,
+                        "endColumn": 71,
+                        "endOffset": 339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 403,
                     "endColumn": 53,
-                    "endOffset": 264
+                    "endOffset": 452
                 },
                 "from": {
                     "file": "/home/shobhit/Documents/Udacity/ShushMe/app/src/main/res/values-w820dp/strings.xml",
